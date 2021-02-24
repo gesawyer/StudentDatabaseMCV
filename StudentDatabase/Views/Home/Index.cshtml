@@ -1,0 +1,20 @@
+﻿@model List<Student>
+
+@foreach(Student s in Model)
+{
+    <h2>Name: @s.Name</h2>
+    <h2>Food: @s.Food</h2>
+    <h2>Hometown: @s.Hometown</h2>
+    <br/>
+}
+
+<h2> Search student by Id</h2>
+<form asp-action="Search" asp-controller="Home">
+    @foreach (Student s in Model)
+    {
+        <label>Id: @s.Id</label>
+        <input type="radio" name="StudentId" value="@s.Id" />
+        <br />
+    }
+    <input type="submit" />
+</form>
